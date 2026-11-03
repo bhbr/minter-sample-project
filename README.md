@@ -1,3 +1,3 @@
 # A minter sample project
 
-It shows the basic setup of a minter extension.
+This project illustrates the basic setup and available functionality of a minter extension.

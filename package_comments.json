@@ -1,0 +1,52 @@
+
+// This commented version of package.json explains its entries.
+
+{
+
+  // interpret .js files as ECMAScript modules, not CommonJS (required)
+  "type": "module",
+
+  // npm run commands (required)
+  "scripts": {
+    "build": "sh build.sh",
+    "test": "node ./dist/_tests/tests.js"
+  },
+
+
+  // entry point for import by other modules, locally or published
+  // (optional)
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts", // repeated for TS tooling
+
+
+
+// ENTRIES FOR NPM PUBLICATION (optional) //
+
+  // general information
+  "name": "A sample minter project",
+  "version": "1.0.0",
+  "description": "This project illustrates the basic setup and available functionality of a minter extension.",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  
+  // files to include
+  "files": [
+      "dist/",
+      "!dist/_tests"
+  ],
+
+  // additional packages to install on installation
+  "dependencies": {
+    "@bhbr/minter": "^1.0.0",
+    "@bhbr/minter-arithmetic": "^1.0.0"
+  },
+  "devDependencies": {
+    "@bhbr/tsts": "^1.1.3"
+  }
+}

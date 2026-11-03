@@ -1,28 +1,30 @@
 {
     "compilerOptions": {
-        "rootDir": "./src",
-        "baseUrl": "./src",
-        "outDir": "./dist",
+        "rootDir": "./src", // contains the TS code to be compiled
+        "outDir": "./dist", // location of the exported JS files
 
-        "target": "ES2021",
+        "target": "ES2021", // exported JS language version
+
+        // resolve node module imports (e. g. '@bhbr/minter')
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
 
-        "declaration": true,
-        "declarationMap": true,
-        "sourceMap": true,
+        "declaration": true, // creates .d.ts files
+        "declarationMap": true, // created d.ts.map files
+        "sourceMap": true, // creates .js.map files
 
-        "esModuleInterop": true,
-        "skipLibCheck": false,
+        "esModuleInterop": true, // helps with importing CommonJS modules (if desired)
+        "skipLibCheck": false, // check .d.ts files for type errors
 
+
+        // APIs used in the source
         "lib": [
-            "ES2021",
-            "DOM",
-            "DOM.Iterable"
+            "ES2021", // Array, Set, Promise, ...
+            "DOM", // DOM elements, Events, ...
+            "DOM.Iterable" // iterating over DOM elements
         ],
     },
-    
     "include": [
-        "./**/*.ts"
+        "src/**/*.ts" // which TS files to compile (all in all subfolders of src/)
     ]
 }
