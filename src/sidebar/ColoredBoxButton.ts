@@ -6,7 +6,8 @@ The button with which you can create a colored box. Holding it down or tapping i
 */
 	defaults(): object {
 		return {
-			creations: ['box'] // fixes the creation message and icon filename
+			creations: ['box'], // fixes the creation message and icon filename
+			iconLocation: '../../minter-sample-project/assets'
 		}
 	}
 
